@@ -1,0 +1,27 @@
+﻿@model MvcTicariOtomasyon.Models.Concrete.Employee
+
+@{
+    ViewBag.Title = "GetEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post))
+{
+<div class="=form-group">
+    @Html.HiddenFor(x => x.EmployeeID)
+    @Html.Label("Ad")
+    @Html.TextBoxFor(x => x.EmployeeFirstName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Soyad")
+    @Html.TextBoxFor(x => x.EmployeeLastName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Görsel")
+    @Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })
+    <br />
+    @Html.Label("Departman")
+    @Html.DropDownListFor(x => x.Departmantid, (List<SelectListItem>)ViewBag.dropList, new { @class = "form-control" })
+</div>
+    <br />
+    <button class="btn btn-success" style="color:black" type="submit">Güncelle</button>
+}

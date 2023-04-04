@@ -1,0 +1,39 @@
+﻿@model MvcTicariOtomasyon.Models.Concrete.SalesReport
+
+@{
+    ViewBag.Title = "GetSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Sale Update</h2>
+<br />
+
+@using (Html.BeginForm("UpdateSale", "Sale", FormMethod.Post))
+
+{
+    @Html.HiddenFor(x => x.SalesReportID)
+    @Html.Label("Ürünler")
+    @Html.DropDownListFor(x => x.Productid, (List<SelectListItem>)ViewBag.dropList1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Cari")
+    @Html.DropDownListFor(x => x.Currentid, (List<SelectListItem>)ViewBag.dropList2, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel")
+    @Html.DropDownListFor(x => x.Employeeid, (List<SelectListItem>)ViewBag.dropList3, new { @class = "form-control" })
+    <br />
+    @Html.Label("Adet")
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fiyat")
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.Label("Toplam Tutar")
+    @Html.TextBoxFor(x => x.Total, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.SalesDate, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success" type="submit" style="color:black">Kaydet</button>
+}

@@ -1,0 +1,30 @@
+﻿@model MvcTicariOtomasyon.Models.Concrete.SalesReport
+
+@{
+    ViewBag.Title = "AddSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Satış Yap</h2>
+<br />
+<form method="post" class="form-group">
+    @Html.Label("Ürünler")
+    @Html.DropDownListFor(x => x.Productid, (List<SelectListItem>)ViewBag.dropList1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Cari")
+    @Html.DropDownListFor(x => x.Currentid, (List<SelectListItem>)ViewBag.dropList2, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel")
+    @Html.DropDownListFor(x => x.Employeeid, (List<SelectListItem>)ViewBag.dropList3, new { @class = "form-control" })
+    <br />
+    @Html.Label("Adet")
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fiyat")
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.Label("Toplam")
+    @Html.TextBoxFor(x => x.Total, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info" type="submit">Kaydet</button>
+</form>

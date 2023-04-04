@@ -1,0 +1,38 @@
+﻿@using MvcTicariOtomasyon.Models.Concrete
+@model List<SalesReport>
+
+@{
+    ViewBag.Title = "CustomerSales";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>CustomerSales</h2>
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> Cari Adı : @ViewBag.crers </li>
+</ol>
+
+<table class="table table-bordered table-hover table-dark">
+    <tr>
+        <th>Id</th>
+        <th>Ürün</th>
+        <th>Personel</th>
+        <th>Adet</th>
+        <th>Fiyat</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SalesReportID</td>
+            <td>@item.Product.ProductName</td>
+            <td>@item.Employee.EmployeeFirstName @item.Employee.EmployeeLastName</td>
+            <td>@item.Piece</td>
+            <td>@item.Price</td>
+            <td>@item.Total</td>
+            <td>@item.SalesDate</td>
+            <td><a href="#" class="btn btn-primary" style="background-color:dodgerblue">Yazdır</a></td>
+        </tr>
+    }
+</table>

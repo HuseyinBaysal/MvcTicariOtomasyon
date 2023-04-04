@@ -1,0 +1,17 @@
+﻿@model MvcTicariOtomasyon.Models.Concrete.Department
+
+@{
+    ViewBag.Title = "AddDepartment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Departman</h2>
+<br />
+
+<form method="post" class="form-group">
+    @Html.Label("Departman Adı")
+    @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info" type="submit">Kaydet</button>
+</form>

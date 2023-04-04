@@ -1,0 +1,26 @@
+﻿@model MvcTicariOtomasyon.Models.Concrete.Category
+
+@{
+    ViewBag.Title = "GetCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Category Update</h2>
+<br />
+
+@* Bir BeginForm oluşturulur. Bu sayfa yüklendikten sonra, post işlemi gerçekleşince hangi ActionResult çalışacaksa hedef gösterilir. *@
+
+@* CategoryGet Sayfası Açıldığında, Güncelleme işlemi yapılırken CategoryController içindeki CategoryUpdate Action'ı Post olucak. *@
+
+@using (Html.BeginForm("UpdateCategory","Category", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.CategoryName)
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.CategoryID)
+    </div>
+    <br />
+    <button class="btn btn-success" type="submit" style="color:black"> Güncelle </button>
+}
+

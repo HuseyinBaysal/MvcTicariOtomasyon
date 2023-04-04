@@ -1,0 +1,17 @@
+﻿@model MvcTicariOtomasyon.Models.Concrete.Category
+
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Kategori</h2>
+<br />
+<form action="/Category/AddCategory" method="post" class="form-group">
+    @Html.Label("Kategori Adı")
+    <br />
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info" type="submit"> Kaydet </button>
+</form>

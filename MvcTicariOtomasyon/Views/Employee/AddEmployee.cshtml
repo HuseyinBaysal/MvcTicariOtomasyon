@@ -1,0 +1,25 @@
+﻿@model MvcTicariOtomasyon.Models.Concrete.Employee
+
+@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Personel</h2>
+<br />
+<form method="post" class="form-group">
+    @Html.Label("Personel Adı")
+    @Html.TextBoxFor(x => x.EmployeeFirstName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel Soyadı")
+    @Html.TextBoxFor(x => x.EmployeeLastName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel Görsel")
+    @Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })
+    <br />
+    @Html.Label("Departman Adı")
+    @Html.DropDownListFor(x => x.Departmentid, (List<SelectListItem>)ViewBag.dropList, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info" type="submit">Kaydet</button>
+</form>

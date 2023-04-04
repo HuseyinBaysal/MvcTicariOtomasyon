@@ -1,0 +1,39 @@
+﻿@model MvcTicariOtomasyon.Models.Concrete.Product
+
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Ürün</h2>
+<br />
+<form action="/Product/AddProduct" method="post" class="form-group">
+    @Html.Label("Ürün Adı")
+    @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Marka Adı")
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    <br />
+    @Html.Label("Stok")
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+    @Html.Label("Alış Fiyat")
+    @Html.TextBoxFor(x => x.PurchasePrice, new { @class = "form-control" })
+    <br />
+    @Html.Label("Satış Fiyat")
+    @Html.TextBoxFor(x => x.SalePrice, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kategori Adı")
+    @Html.DropDownListFor(x => x.Categoryid, (List<SelectListItem>)ViewBag.dropList, new { @class = "form-control" })
+    @*@Html.TextBoxFor(x => x.Categoryid, new { @class = "form-control" })*@
+    <br />
+    @Html.Label("Ürün Görsel")
+    @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control" })
+    <br />
+    @Html.Label("Ürün Durum")
+    @Html.TextBoxFor(x => x.Condition, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info" type="submit">Kaydet</button>
+</form>
+
