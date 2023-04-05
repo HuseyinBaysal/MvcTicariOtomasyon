@@ -129,6 +129,7 @@
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Global.asax.cs">
@@ -138,6 +139,14 @@
     <Compile Include="Migrations\202304040940575_init.cs" />
     <Compile Include="Migrations\202304040940575_init.Designer.cs">
       <DependentUpon>202304040940575_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304050733026_mig-2.cs" />
+    <Compile Include="Migrations\202304050733026_mig-2.Designer.cs">
+      <DependentUpon>202304050733026_mig-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304050805342_mig-3.cs" />
+    <Compile Include="Migrations\202304050805342_mig-3.Designer.cs">
+      <DependentUpon>202304050805342_mig-3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\IEntity.cs" />
@@ -569,6 +578,9 @@
     <Content Include="Views\Sale\GetSale.cshtml" />
     <Content Include="Views\Sale\SaleDetails.cshtml" />
     <Content Include="Views\Product\ProductList.cshtml" />
+    <Content Include="Views\Invoice\Index.cshtml" />
+    <Content Include="Views\Invoice\AddInvoice.cshtml" />
+    <Content Include="Views\Invoice\GetInvoice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -581,6 +593,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202304040940575_init.resx">
       <DependentUpon>202304040940575_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304050733026_mig-2.resx">
+      <DependentUpon>202304050733026_mig-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304050805342_mig-3.resx">
+      <DependentUpon>202304050805342_mig-3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,47 @@
+﻿@using MvcTicariOtomasyon.Models.Concrete
+@model List<Invoice>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered table-hover table-dark">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Seri No</th>
+            <th>Sıra No</th>
+            <th>Vergi Dairesi</th>
+            <th>Tarih</th>
+            <th>Saat</th>
+            <th>Teslim Eden</th>
+            <th>Teslim Alan</th>
+            <th>Toplam</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.InvoiceID</td>
+            <td>@item.InvoiceSerialNumber</td>
+            <td>@item.InvoiceRowNumber</td>
+            <td>@item.TaxAdministration</td>
+            <td>@item.InvoiceDate</td>
+            <td>@item.TaxTime</td>
+            <td>@item.Receiver</td>
+            <td>@item.Submitter</td>
+            <td>@item.InvoiceTotal</td>
+            <td><a href="/Department/DeleteDepartment/@item.InvoiceID" class="btn btn-danger" style="color: black">Sil</a></td>
+            <td><a href="/Invoice/GetInvoice/@item.InvoiceID" class="btn btn-warning" style="color: black">Güncelle</a></td>
+            <td><a href="/Department/DepartmentDetails/@item.InvoiceID" class="btn btn-primary" style="background-color:navajowhite; color:black">Detaylar</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<br />
+<a class="btn btn-outline-info" href="/Invoice/AddInvoice" style="color:black">Fatura Girişi</a>
+

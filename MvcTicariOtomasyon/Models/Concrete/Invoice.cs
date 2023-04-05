@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -18,7 +19,10 @@ namespace MvcTicariOtomasyon.Models.Concrete
 
         [StringLength(50)]
         public string TaxAdministration { get; set; }
-        public DateTime TaxTime { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(5)]
+        public string TaxTime { get; set; }
 
         [StringLength(30)]
         public string Receiver { get; set; }
@@ -28,6 +32,7 @@ namespace MvcTicariOtomasyon.Models.Concrete
 
         //Bir faturanın birden fazla kalemi olabilir. 
 
+        public decimal InvoiceTotal { get; set; }
         public ICollection<InvoiceContent> InvoiceContents { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -19,6 +20,8 @@ namespace MvcTicariOtomasyon.Models.Concrete
 
         //Bir kalem bir faturada bulunabilir.
 
+        public int Invoiceid { get; set; }
+        [ForeignKey("Invoiceid")]
         public virtual Invoice Invoice { get; set; }
     }
 }

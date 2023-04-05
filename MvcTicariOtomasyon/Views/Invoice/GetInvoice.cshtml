@@ -1,0 +1,39 @@
+﻿@model MvcTicariOtomasyon.Models.Concrete.Invoice
+
+@{
+    ViewBag.Title = "GetInvoice";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Update</h2>
+<br />
+
+@using (Html.BeginForm("UpdateInvoice", "Invoice", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.InvoiceID)
+
+    @Html.Label("Fatura Seri Numarası")
+    @Html.TextBoxFor(x => x.InvoiceSerialNumber, new { @class = "form-control" })
+    <br>
+    @Html.Label("Fatura Sıra Numara")
+    @Html.TextBoxFor(x => x.InvoiceRowNumber, new { @class = "form-control" })
+    <br>
+    @Html.Label("Vergi Dairesi")
+    @Html.TextBoxFor(x => x.TaxAdministration, new { @class = "form-control" })
+    <br>
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.InvoiceDate, new { @class = "form-control" })
+    <br>
+    @Html.Label("Saat")
+    @Html.TextBoxFor(x => x.TaxTime, new { @class = "form-control" })
+    <br>
+    @Html.Label("Teslim Eden")
+    @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+    <br>
+    @Html.Label("Teslim Alan")
+    @Html.TextBoxFor(x => x.Submitter, new { @class = "form-control" })
+    <br>
+
+    <button class="btn btn-success" style="color:black" type="submit">Güncelle</button>
+}
